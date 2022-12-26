@@ -10,7 +10,10 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       // from table "i-screams" select everything
-      const { data, error } = await supabase.from("i-screams").select();
+      const { data, error } = await supabase
+        .from("i-screams")
+        .select()
+        .order("rating", { ascending: false });
 
       if (error) {
         console.log(error);
@@ -22,9 +25,7 @@ export default function Home() {
         setDbError(null);
       }
     })();
-  });
-
-  console.log(iScreams);
+  }, []);
 
   return (
     <div className="home">
