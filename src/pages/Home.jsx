@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Scream from "../components/scream";
+import Scream from "../components/Scream";
 import supabase from "../utils/supabaseClient";
 
 export default function Home() {
